@@ -32,7 +32,7 @@ export default ({ children, data: {site: {siteMetadata: {title}}} }) =>
         </Link>
         <g.Ul listStyle={`none`}>
             <ListLink to="/">Home</ListLink>
-            <ListLink to="/pandas/">Pandas</ListLink>
+            <ListLink to="/pandas/">Pandas🐼</ListLink>
             <ListLink to="/about/">About</ListLink>
             <ListLink to="/about-pandas/">About Pandas</ListLink>
             <ListLink to="/contact/">Contact</ListLink>

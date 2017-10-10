@@ -3,7 +3,8 @@
   "description": "zombipormedio.github.io's Source code",
   "license": "MIT",
   "bin": {
-    "gulp": "./bin/gulp"
+    "gulp": "./bin/gulp",
+    "gatsby": "./bin/gatsby"
   },
   "scripts": {
     "develop": "gatsby develop",

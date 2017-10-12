@@ -5,5 +5,3 @@ install:
  - npm install
 script:
   - npm run deploy-ci
-notifications:
-  email: false

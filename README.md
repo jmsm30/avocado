@@ -1,2 +1,2 @@
-# 🥑 avocado
+# 🥑 avocado [![Build Status](https://travis-ci.org/Zombispormedio/avocado.svg?branch=master)](https://travis-ci.org/Zombispormedio/avocado)
 Avocado is the my personal website source before being deployed in zombispormedio.github.io using GastbyJS

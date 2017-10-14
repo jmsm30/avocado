@@ -10,6 +10,7 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "test": "jest",
     "deploy-ci": "gulp deploy"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
     "gulp-git": "^2.4.2",
     "gulp-header": "^1.8.9",
     "gulp-shell": "^0.6.3",
+    "jest": "^21.2.1",
     "run-sequence": "^2.2.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^9.0.1"

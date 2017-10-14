@@ -4,6 +4,7 @@ const shell = require('gulp-shell')
 const file = require('gulp-file')
 const git = require("gulp-git")
 const runSequence = require("run-sequence")
+require('dotenv').config()
 const getMarkdownHeader = (pathname, date, title) => `
 ---
 path: "/${pathname}"
@@ -48,7 +49,6 @@ gulp.task('build', shell.task([
 ]))
 
 gulp.task("clone:public", function(cb){
-    require('dotenv').config()
     git.clone(process.env.REPO, {args: "./public"}, function(err){
         if(err) throw err
         cb()

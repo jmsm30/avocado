@@ -49,7 +49,7 @@ gulp.task('build', shell.task([
 ]))
 
 gulp.task("clone:public", function(cb){
-    git.clone(process.env.REPO, {args: "./public"}, function(err){
+    git.clone(process.env.GITHUB_REPO, {args: "./public"}, function(err){
         if(err) throw err
         cb()
     })

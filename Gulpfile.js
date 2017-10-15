@@ -5,9 +5,8 @@ const file = require('gulp-file')
 const git = require("gulp-git")
 const runSequence = require("run-sequence")
 require('dotenv').config()
-const getMarkdownHeader = (pathname, date, title) => `
----
-path: "/${pathname}"
+const getMarkdownHeader = (slug, date, title) => `---
+slug: "/${slug}"
 date: "${date}"
 title: "${title}"
 ---
@@ -21,7 +20,7 @@ gulp.task("create:post", function(){
     const mdHeader = getMarkdownHeader(pathname, now.toISOString(), title)
 
     return file(`${now.getTime()}-${pathname}.md`, mdHeader, {src: true})
-            .pipe(gulp.dest("./content/posts"))
+            .pipe(gulp.dest("./content/post"))
 })
 
 gulp.task('clean', function(){

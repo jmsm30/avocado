@@ -1,7 +1,9 @@
 ---
-title: "Sweet Pandas Eating Sweets"
-date: "2017-08-10"
+slug: "/sweet-pandas-eating-sweets"
+date: "2017-10-15T12:33:15.165Z"
+title: "Sweet pandas eating sweets"
 ---
+
 
 Pandas are really sweet.
 

@@ -9,11 +9,11 @@ export default ({ data }) =>
             Amazing Panda Eating Things
         </g.H1>
        <h4>
-        {data.allMarkdownRemark.totalCount} Posts
+        {data.allMarkdownRemark.totalCount+data.allContentfulPost.totalCount} Posts
        </h4>
        {data.allMarkdownRemark.edges.map(({node})=>
        <div key={node.id}>
-        <Link to={node.fields.slug} css={{textDecoration: `none`, color: `inherit`}}>
+        <Link to={node.frontmatter.slug} css={{textDecoration: `none`, color: `inherit`}}>
             <g.H3 marginBottom={rhythm(1/4)}>
                 {node.frontmatter.title}{" "}
                 <g.Span  color="#BBB">- {node.frontmatter.date}</g.Span>
@@ -35,11 +35,23 @@ export const query = graphql`
                     frontmatter {
                         title
                         date(formatString: "DD MMMM, YYYY")
-                    }
-                    fields {
                         slug
                     }
                     excerpt
+                }
+            }
+        }
+        allContentfulPost(sort: {fields: [updatedAt], order: DESC}) {
+            totalCount
+            edges {
+                node {
+                    id
+                    title
+                    content
+                    updatedAt 
+                    fields{
+                        slug
+                    }
                 }
             }
         }

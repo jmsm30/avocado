@@ -11,7 +11,7 @@ exports.onCreateNode = ({node, getNode, boundActionCreators:{createNodeField}}) 
     }
 }
 
-exports.createPages = ({graphql, boundActionCreators:{createPage}}) => 
+exports.createPages = ({graphql, boundActionCreators:{createPage}}, {template}) => 
                 graphql(`
                     {
                         allContentfulPost {
@@ -25,11 +25,11 @@ exports.createPages = ({graphql, boundActionCreators:{createPage}}) =>
                         }
                     }
                 `).then(({data: {allContentfulPost: {edges}}}) => {
+                    const component = path.resolve(template)
                     edges.forEach(({node: {fields: {slug}}}) => {
-                        console.log(slug)
                         createPage({
                             path: slug, 
-                            component: path.resolve(`./src/templates/contentful.js`),
+                            component,
                             context: {slug}
                         })
                     })

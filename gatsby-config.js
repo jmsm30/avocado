@@ -34,7 +34,18 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
               },
         },
-        `markdown-pages`,
-        `contentful-pages`
+        {
+            resolve: `markdown-pages`,
+            options: {
+                template: `${__dirname}/src/templates/blog-post.js`
+            }
+        },
+        {
+            resolve: `contentful-pages`,
+            options:  {
+                template: `${__dirname}/src/templates/contentful.js`
+            }
+        }
+        
     ]
 }

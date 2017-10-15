@@ -1,5 +1,5 @@
 const path = require("path")
-exports.createPages = ({graphql, boundActionCreators:{createPage}}, {template}) => 
+exports.createPages = ({graphql, boundActionCreators:{createPage}}, {component}) => 
                 graphql(`
                     {
                         allMarkdownRemark {
@@ -13,8 +13,6 @@ exports.createPages = ({graphql, boundActionCreators:{createPage}}, {template}) 
                         }
                     }
                 `).then(({data: {allMarkdownRemark: {edges}}}) => {
-                    const component = path.resolve(template)
-                    console.log(component)
                     edges.forEach(({node: {frontmatter: {slug}}}) => {
                         createPage({
                             path: slug, 

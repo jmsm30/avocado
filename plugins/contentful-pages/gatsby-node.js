@@ -11,7 +11,7 @@ exports.onCreateNode = ({node, getNode, boundActionCreators:{createNodeField}}) 
     }
 }
 
-exports.createPages = ({graphql, boundActionCreators:{createPage}}, {template}) => 
+exports.createPages = ({graphql, boundActionCreators:{createPage}}, {component}) => 
                 graphql(`
                     {
                         allContentfulPost {
@@ -25,7 +25,6 @@ exports.createPages = ({graphql, boundActionCreators:{createPage}}, {template}) 
                         }
                     }
                 `).then(({data: {allContentfulPost: {edges}}}) => {
-                    const component = path.resolve(template)
                     edges.forEach(({node: {fields: {slug}}}) => {
                         createPage({
                             path: slug, 

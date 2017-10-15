@@ -1,4 +1,7 @@
 require('dotenv').config()
+const path = require("path")
+
+
 module.exports = {
     siteMetadata: {
         title: `Xavier Serrano - Blog`,
@@ -37,13 +40,13 @@ module.exports = {
         {
             resolve: `markdown-pages`,
             options: {
-                template: `${__dirname}/src/templates/blog-post.js`
+                component: path.resolve(`./src/templates/blog-post.js`)
             }
         },
         {
             resolve: `contentful-pages`,
             options:  {
-                template: `${__dirname}/src/templates/contentful.js`
+                component: path.resolve(`./src/templates/contentful.js`)
             }
         }
         

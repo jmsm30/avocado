@@ -1,4 +1,4 @@
-const path = require("path")
+const slash = require("slash")
 exports.createPages = ({graphql, boundActionCreators:{createPage}}, {component}) => 
                 graphql(`
                     {
@@ -16,7 +16,7 @@ exports.createPages = ({graphql, boundActionCreators:{createPage}}, {component})
                     edges.forEach(({node: {frontmatter: {slug}}}) => {
                         createPage({
                             path: slug, 
-                            component,
+                            component: slash(component),
                             context: {slug}
                         })
                     })

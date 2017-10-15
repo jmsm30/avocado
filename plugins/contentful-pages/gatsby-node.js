@@ -1,4 +1,5 @@
-const path = require("path")
+
+const slash = require("slash")
 const {createFilePath}  = require("gatsby-source-filesystem") 
 
 exports.onCreateNode = ({node, getNode, boundActionCreators:{createNodeField}}) => {
@@ -28,7 +29,7 @@ exports.createPages = ({graphql, boundActionCreators:{createPage}}, {component})
                     edges.forEach(({node: {fields: {slug}}}) => {
                         createPage({
                             path: slug, 
-                            component,
+                            component: slash(component),
                             context: {slug}
                         })
                     })

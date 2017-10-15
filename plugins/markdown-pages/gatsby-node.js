@@ -16,7 +16,7 @@ exports.createPages = ({graphql, boundActionCreators:{createPage}}, {component})
                     edges.forEach(({node: {frontmatter: {slug}}}) => {
                         createPage({
                             path: slug, 
-                            component: slash(component),
+                            //component: slash(component),
                             context: {slug}
                         })
                     })

@@ -1,6 +1,4 @@
 require('dotenv').config()
-const path = require("path")
-
 
 module.exports = {
     siteMetadata: {
@@ -36,18 +34,6 @@ module.exports = {
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
               },
-        },
-        {
-            resolve: `markdown-pages`,
-            options: {
-                component: path.resolve(`./src/templates/blog-post.js`)
-            }
-        },
-        {
-            resolve: `contentful-pages`,
-            options:  {
-                component: path.resolve(`./src/templates/contentful.js`)
-            }
         }
         
     ]
